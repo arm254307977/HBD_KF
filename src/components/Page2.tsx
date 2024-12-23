@@ -3,15 +3,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import CardEffectSwiper from "./CardEffectSwiper";
-import video1 from "../../public/images/video1.mp4";
 
 interface Page2Props {
   setSelectPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export default function Page2({ setSelectPage }: Page2Props) {
+  const [isBoxOpen, setIsBoxOpen] = useState(false);
+
   const [textHeaderPage2, setTextHeaderPage2] = useState("");
-  const fullTextHeaderPage2 = "Ourr Moments Together";
+  const fullTextHeaderPage2 = "  Our Moments Together";
   const typingSpeed = 100; // ความเร็วในการพิมพ์ (ms)
 
   useEffect(() => {
@@ -42,23 +43,48 @@ export default function Page2({ setSelectPage }: Page2Props) {
         <p className="text-lg md:text-2xl text-white mt-2">These are the moments that make me love you even more.</p>
       </motion.header>
 
-      {/* Gallery Section */}
-      <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
-        <CardEffectSwiper />
-      </motion.section>
-
-      {/* Video Section */}
+      {/* Gift Box Section */}
       <motion.section
-        className="w-full px-4 py-6 flex flex-col items-center mt-10"
+        className="w-full flex justify-center items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
+        transition={{ duration: 1.5 }}
       >
-        <video controls className="w-[300px] h-[200px] rounded-lg shadow-lg">
-          <source src="/images/video1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <p className="text-white text-lg mt-4 text-center">"I love you more than words can say, and these moments show why. 💖"</p>
+        {!isBoxOpen ? (
+          <motion.div
+            className="w-[200px] h-[200px] bg-pink-500 rounded-lg flex justify-center items-center cursor-pointer shadow-lg"
+            whileHover={{ scale: 1.1 }}
+            onClick={() => setIsBoxOpen(true)} // เปิดกล่องเมื่อคลิก
+          >
+            <p className="text-white text-xl font-bold">🎁 Click to Open 🎁</p>
+          </motion.div>
+        ) : (
+          <motion.div
+            className="w-full flex flex-col items-center gap-6"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Gallery Section */}
+            <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
+              <CardEffectSwiper />
+            </motion.section>
+
+            {/* Video Section */}
+            <motion.section
+              className="w-full flex flex-col items-center mt-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
+            >
+              <video controls className="w-[50%] h-[50%] rounded-xl">
+                <source src="/images/video1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p className="text-white text-lg mt-6 text-center">"I love you more than words can say, and these moments show why. 💖"</p>
+            </motion.section>
+          </motion.div>
+        )}
       </motion.section>
 
       {/* Back to Page 1 Button */}
