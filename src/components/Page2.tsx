@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import CardEffectSwiper from "./CardEffectSwiper";
+import video1 from "../../public/images/video1.mp4";
 
 interface Page2Props {
   setSelectPage: React.Dispatch<React.SetStateAction<number>>;
@@ -10,7 +11,7 @@ interface Page2Props {
 
 export default function Page2({ setSelectPage }: Page2Props) {
   const [textHeaderPage2, setTextHeaderPage2] = useState("");
-  const fullTextHeaderPage2 = "Our Moments Together";
+  const fullTextHeaderPage2 = "Ourr Moments Together";
   const typingSpeed = 100; // ความเร็วในการพิมพ์ (ms)
 
   useEffect(() => {
@@ -43,28 +44,18 @@ export default function Page2({ setSelectPage }: Page2Props) {
 
       {/* Gallery Section */}
       <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
-        {/* <div className="relative overflow-hidden rounded-lg shadow-lg">
-          <Image src="/images/photo1.jpg" alt="Moment 1" width={300} height={300} className="object-cover" />
-        </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg">
-          <Image src="/images/photo2.jpg" alt="Moment 2" width={300} height={300} className="object-cover" />
-        </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg">
-          <Image src="/images/photo3.jpg" alt="Moment 3" width={300} height={300} className="object-cover" />
-        </div> */}
-
         <CardEffectSwiper />
       </motion.section>
 
       {/* Video Section */}
       <motion.section
-        className="w-full px-4 py-6 flex flex-col items-center mt-4"
+        className="w-full px-4 py-6 flex flex-col items-center mt-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.5 }}
       >
-        <video controls className="w-full max-w-2xl rounded-lg shadow-lg">
-          <source src="/videos/love_video.mp4" type="video/mp4" />
+        <video controls className="w-[300px] h-[200px] rounded-lg shadow-lg">
+          <source src="/images/video1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <p className="text-white text-lg mt-4 text-center">"I love you more than words can say, and these moments show why. 💖"</p>
