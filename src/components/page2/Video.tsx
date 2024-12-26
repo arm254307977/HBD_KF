@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-type Props = {};
-
-function Video({}: Props) {
+function Video() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleVideoEnded = () => {

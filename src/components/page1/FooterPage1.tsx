@@ -1,9 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-function FooterPage1({}: Props) {
+function FooterPage1() {
   return (
     <motion.footer
       className="text-nude mt-8 text-sm"

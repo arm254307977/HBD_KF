@@ -4,10 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { SetStateAction } from "react";
 
 type Props = {
-  setDataSelectImgage: React.Dispatch<SetStateAction<any>>;
+  setDataSelectImgage: React.Dispatch<SetStateAction<StaticImageData | null>>;
 };
 
 import image1 from "../../public/images/1.jpg";
@@ -33,7 +34,6 @@ import image20 from "../../public/images/20.jpg";
 import image21 from "../../public/images/21.jpg";
 import image22 from "../../public/images/22.jpg";
 import image23 from "../../public/images/23.jpg";
-import { SetStateAction } from "react";
 
 export default function CardEffectSwiper({ setDataSelectImgage }: Props) {
   const images = [

@@ -2,8 +2,7 @@
 import Page1 from "@/components/Page1";
 import Page2 from "@/components/Page2";
 import Page3 from "@/components/Page3";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [selectPage, setSelectPage] = useState<number>(1);

@@ -17,7 +17,7 @@ export default function Page2({ setSelectPage }: Page2Props) {
 
   const [textHeader1, setTextHeader1] = useState("");
   const [textHeader2, setTextHeader2] = useState("");
-  const [textHeader3, setTextHeader3] = useState("เค้ามีสาวมาให้เธอดู ค่อยๆดูนะ คนนี้น่ารักมากเลย");
+  const [textHeader3] = useState("เค้ามีสาวมาให้เธอดู ค่อยๆดูนะ คนนี้น่ารักมากเลย");
   const [textIndex, setTextIndex] = useState(0); // ตัวแปร index เดียวใช้สำหรับข้อความทั้งหมด
 
   const fullTextHeader1 = "โตขึ้นอีกปีแล้ว";

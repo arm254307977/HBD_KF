@@ -1,15 +1,14 @@
-import React, { SetStateAction, useEffect, useState } from "react";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, ModalProps, Button, useDisclosure, RadioGroup, Radio } from "@nextui-org/react";
-import Image from "next/image";
+import React, { SetStateAction, useEffect } from "react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import Image, { StaticImageData } from "next/image";
 
 type Props = {
-  isDataSelectImgage: any;
-  setDataSelectImgage: React.Dispatch<SetStateAction<any>>;
+  isDataSelectImgage: StaticImageData | null;
+  setDataSelectImgage: React.Dispatch<SetStateAction<StaticImageData | null>>;
 };
 
 const ModalShowImage = ({ isDataSelectImgage, setDataSelectImgage }: Props) => {
-  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
-  const [scrollBehavior, setScrollBehavior] = useState<ModalProps["scrollBehavior"]>("inside");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     console.log("isDataSelectImgage : ", isDataSelectImgage);
@@ -20,8 +19,8 @@ const ModalShowImage = ({ isDataSelectImgage, setDataSelectImgage }: Props) => {
   }, [isDataSelectImgage]);
 
   const handleModalClose = () => {
-    setDataSelectImgage(null); // ล่างค่าที่นี่เมื่อ modal ถูกปิด
-    onClose(); // ปิด modal
+    setDataSelectImgage(null);
+    onClose();
   };
 
   return (
@@ -32,7 +31,7 @@ const ModalShowImage = ({ isDataSelectImgage, setDataSelectImgage }: Props) => {
           handleModalClose();
         }
       }}
-      scrollBehavior={scrollBehavior}
+      scrollBehavior={"inside"}
       //   onOpenChange={onOpenChange}
       placement="center"
       size="lg"

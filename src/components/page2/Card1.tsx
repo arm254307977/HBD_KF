@@ -2,9 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-type Props = {};
-
-function Card1({}: Props) {
+function Card1() {
   return (
     <motion.div
       className="bg-cream border border-nude/30 rounded-lg shadow-lg p-6 w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 relative mt-6"

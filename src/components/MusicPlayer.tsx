@@ -30,7 +30,8 @@ export default function MusicPlayer() {
 
   const duration = useMemo(() => {
     return audioRef.current?.duration || 0;
-  }, [audioRef.current?.duration]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [audioRef?.current?.duration]);
 
   useEffect(() => {
     if (!audioRef.current) return;

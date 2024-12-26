@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@nextui-org/react";
-import { motion } from "framer-motion";
 import { RiArrowGoBackFill } from "react-icons/ri";
 
 type Props = {
