@@ -15,7 +15,7 @@ function Card1() {
         <Image src="/images/gift1.png" alt="Gift" width={200} height={200} className="rounded-lg" />
       </div>
       <h2 className="text-2xl font-bold text-center text-nude mb-4">ถึง แฟนของเค้า</h2>
-      <p className="text-hot-pink/90 text-center leading-relaxed">
+      <p className="text-hot-pink/90 text-center leading-relaxed break-words">
         เค้าหวังว่าวันนี้จะทำให้เธอมีความสุขมากๆ เหมือนกับที่เธอมอบให้เค้ามาตลอด เธอคือทุกสิ่งสำหรับเค้าเลยนะคับ
       </p>
     </motion.div>

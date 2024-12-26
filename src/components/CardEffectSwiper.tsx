@@ -78,7 +78,7 @@ export default function CardEffectSwiper({ setDataSelectImgage }: Props) {
       ))}
 
       <div className="absolute top-2 -right-[70px] md:-right-[90px] swing">
-        <Image src="/images/ลูกศร2.png" alt="เป็ด" width={50} height={50} className="" />
+        <Image src="/images/ลูกศร2.png" alt="ลูกศร" width={50} height={50} className="" />
       </div>
       <p className="-top-2 -right-[70px] md:-right-[100px] absolute text-xs text-nude font-bold drifting">จิ้มดูได้น้า</p>
     </Swiper>
