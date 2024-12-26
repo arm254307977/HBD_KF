@@ -2,10 +2,17 @@
 import Page1 from "@/components/Page1";
 import Page2 from "@/components/Page2";
 import Page3 from "@/components/Page3";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [selectPage, setSelectPage] = useState<number>(1);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [selectPage]);
 
   return (
     <div className="bg-hot-pink/10 min-h-screen flex flex-col items-center justify-center py-4 overflow-x-hidden">
