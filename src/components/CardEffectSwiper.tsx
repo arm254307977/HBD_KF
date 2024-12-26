@@ -6,7 +6,10 @@ import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import Image from "next/image";
 
-// นำเข้ารูปทั้งหมดล่วงหน้า
+type Props = {
+  setDataSelectImgage: React.Dispatch<SetStateAction<any>>;
+};
+
 import image1 from "../../public/images/1.jpg";
 import image2 from "../../public/images/2.jpg";
 import image3 from "../../public/images/3.jpg";
@@ -30,12 +33,9 @@ import image20 from "../../public/images/20.jpg";
 import image21 from "../../public/images/21.jpg";
 import image22 from "../../public/images/22.jpg";
 import image23 from "../../public/images/23.jpg";
-import image24 from "../../public/images/24.jpg";
-import image25 from "../../public/images/25.jpg";
-import image26 from "../../public/images/26.jpg";
+import { SetStateAction } from "react";
 
-export default function CardEffectSwiper() {
-  // เก็บภาพทั้งหมดใน array
+export default function CardEffectSwiper({ setDataSelectImgage }: Props) {
   const images = [
     image1,
     image2,
@@ -60,17 +60,14 @@ export default function CardEffectSwiper() {
     image21,
     image22,
     image23,
-    image24,
-    image25,
-    image26,
   ];
 
   return (
-    <Swiper effect="cards" grabCursor={true} modules={[EffectCards]} className="w-[10rem] h-[15rem] md:w-[23rem] md:h-[35rem]">
+    <Swiper effect="cards" grabCursor={true} modules={[EffectCards]} className="w-[12rem] h-[17rem] md:w-[23rem] md:h-[35rem] drop-shadow-lg">
       {images.map((image, index) => (
-        <SwiperSlide key={index}>
-          <div className="w-full h-full flex justify-center items-center rounded-xl">
-            <Image src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover rounded-xl" width={300} height={400} />
+        <SwiperSlide key={index} className="rounded-xl">
+          <div className="w-full h-full flex justify-center items-center cursor-pointer" onClick={() => setDataSelectImgage(image)}>
+            <Image src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" width={300} height={400} />
           </div>
         </SwiperSlide>
       ))}
