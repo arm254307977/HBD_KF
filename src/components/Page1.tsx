@@ -65,9 +65,7 @@ export default function Page1({ setSelectPage }: Page1Props) {
       />
 
       <MusicPlayer />
-
       <ButtonsSurprise setSelectPage={setSelectPage} />
-
       <FooterPage1 />
     </>
   );

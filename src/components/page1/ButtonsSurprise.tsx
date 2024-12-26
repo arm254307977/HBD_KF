@@ -6,7 +6,7 @@ type Props = { setSelectPage: Dispatch<SetStateAction<number>> };
 
 function ButtonsSurprise({ setSelectPage }: Props) {
   return (
-    <div className="mt-6 flex flex-wrap justify-center space-x-4">
+    <div className="flex flex-wrap justify-center space-x-4">
       <motion.button
         className="bg-nude/70 text-cream py-2 px-4 rounded-full shadow-md hover:bg-nude bounceBT1"
         whileHover={{ scale: 1.1 }}
