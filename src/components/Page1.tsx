@@ -64,10 +64,8 @@ export default function Page1({ setSelectPage }: Page1Props) {
         emoji2={"✨"}
       />
 
-      <ButtonsSurprise setSelectPage={setSelectPage} />
-
       <MusicPlayer />
-
+      <ButtonsSurprise setSelectPage={setSelectPage} />
       <FooterPage1 />
     </>
   );
