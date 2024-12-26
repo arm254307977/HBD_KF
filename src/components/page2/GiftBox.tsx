@@ -32,15 +32,11 @@ function GiftBox({ isBoxOpen, setIsBoxOpen }: Props) {
         </div>
       ) : (
         <motion.div
-          className="w-full flex flex-col items-center relative"
+          className="w-full flex flex-col items-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="absolute -top-8 right-[50px] swing">
-            <Image src="/images/ลูกศร2.png" alt="เป็ด" width={50} height={50} className="" />
-          </div>
-          <p className="-top-12 right-[40px] absolute text-xs text-nude font-bold drifting">จิ้มดูได้น้า</p>
           <CardEffectSwiper setDataSelectImgage={setDataSelectImgage} />
         </motion.div>
       )}

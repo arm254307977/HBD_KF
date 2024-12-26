@@ -63,7 +63,12 @@ export default function CardEffectSwiper({ setDataSelectImgage }: Props) {
   ];
 
   return (
-    <Swiper effect="cards" grabCursor={true} modules={[EffectCards]} className="w-[12rem] h-[17rem] md:w-[23rem] md:h-[35rem] drop-shadow-lg">
+    <Swiper
+      effect="cards"
+      grabCursor={true}
+      modules={[EffectCards]}
+      className="w-[12rem] h-[17rem] md:w-[23rem] md:h-[35rem] drop-shadow-lg relative"
+    >
       {images.map((image, index) => (
         <SwiperSlide key={index} className="rounded-xl">
           <div className="w-full h-full flex justify-center items-center cursor-pointer" onClick={() => setDataSelectImgage(image)}>
@@ -71,6 +76,11 @@ export default function CardEffectSwiper({ setDataSelectImgage }: Props) {
           </div>
         </SwiperSlide>
       ))}
+
+      <div className="absolute top-2 -right-[70px] md:-right-[90px] swing">
+        <Image src="/images/ลูกศร2.png" alt="เป็ด" width={50} height={50} className="" />
+      </div>
+      <p className="-top-2 -right-[70px] md:-right-[100px] absolute text-xs text-nude font-bold drifting">จิ้มดูได้น้า</p>
     </Swiper>
   );
 }
