@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import Video from "./page2/Video";
 import ButtonBackToPage1 from "./ButtonBackToPage1";
 import Card1 from "./page2/Card1";
 import GiftBox from "./page2/GiftBox";

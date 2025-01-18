@@ -3,7 +3,6 @@ import ButtonBackToPage1 from "./ButtonBackToPage1";
 import Confetti from "react-confetti";
 import Header from "./Header";
 import GiftBox from "./page3/GiftBox";
-import Card1 from "./page2/Card1";
 import Video from "./page2/Video";
 import CardEffectSwiper from "./page3/CardEffectSwiper";
 import { StaticImageData } from "next/image";

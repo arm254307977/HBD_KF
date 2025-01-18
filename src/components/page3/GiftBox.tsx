@@ -1,9 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
-import CardEffectSwiper from "../page3/CardEffectSwiper";
-import { useState } from "react";
-import ModalShowImage from "../page2/ModalShowImage";
+import Image from "next/image";
 import ModalShowPin from "./ModalShowPin";
 
 type Props = {
@@ -12,8 +9,6 @@ type Props = {
 };
 
 function GiftBox({ isBoxOpen, setIsBoxOpen }: Props) {
-  const [dataSelectImgage, setDataSelectImgage] = useState<StaticImageData | null>(null);
-
   return (
     <motion.section
       className={`w-full flex flex-col justify-center items-center mt-2`}

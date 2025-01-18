@@ -1,6 +1,6 @@
 import React, { SetStateAction, useEffect, useState } from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, InputOtp } from "@nextui-org/react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useForm, Controller } from "react-hook-form";
 import { motion } from "framer-motion";
 
@@ -33,7 +33,7 @@ const ModalShowPin = ({ isBoxOpen, setIsBoxOpen }: Props) => {
     if (isBoxOpen) {
       onOpen();
     }
-  }, [isBoxOpen]);
+  }, [isBoxOpen, onOpen]);
 
   const handleModalClose = () => {
     setIsBoxOpen(false);

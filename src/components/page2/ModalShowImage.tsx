@@ -14,7 +14,7 @@ const ModalShowImage = ({ dataSelectImgage, setDataSelectImgage }: Props) => {
     if (dataSelectImgage) {
       onOpen();
     }
-  }, [dataSelectImgage]);
+  }, [dataSelectImgage, onOpen]);
 
   const handleModalClose = () => {
     setDataSelectImgage(null);

@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Image, { StaticImageData } from "next/image";
-import { SetStateAction } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ModalShowImage from "../page2/ModalShowImage";
 
@@ -16,10 +16,20 @@ type Props = {
 };
 
 export default function CardEffectSwiper({ dataSelectImgage, setDataSelectImgage }: Props) {
-  const images = [];
-  for (let i = 100; i <= 117; i++) {
-    images.push(require(`../../../public/images/${i}.jpg`));
-  }
+  const [images, setImages] = useState<StaticImageData[]>([]);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const importedImages: StaticImageData[] = [];
+      for (let i = 100; i <= 117; i++) {
+        const image = await import(`../../../public/images/${i}.jpg`);
+        importedImages.push(image.default);
+      }
+      setImages(importedImages);
+    };
+
+    loadImages();
+  }, []);
 
   return (
     <motion.section

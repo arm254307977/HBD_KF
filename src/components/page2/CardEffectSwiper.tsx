@@ -5,17 +5,27 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import Image, { StaticImageData } from "next/image";
-import { SetStateAction } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 
 type Props = {
   setDataSelectImgage: React.Dispatch<SetStateAction<StaticImageData | null>>;
 };
 
 export default function CardEffectSwiper({ setDataSelectImgage }: Props) {
-  const images = [];
-  for (let i = 1; i <= 32; i++) {
-    images.push(require(`../../../public/images/${i}.jpg`));
-  }
+  const [images, setImages] = useState<StaticImageData[]>([]);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const importedImages: StaticImageData[] = [];
+      for (let i = 1; i <= 32; i++) {
+        const image = await import(`../../../public/images/${i}.jpg`);
+        importedImages.push(image.default);
+      }
+      setImages(importedImages);
+    };
+
+    loadImages();
+  }, []);
 
   return (
     <Swiper
