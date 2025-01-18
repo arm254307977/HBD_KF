@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import Image, { StaticImageData } from "next/image";
-import { SetStateAction, useEffect, useState } from "react";
+import { SetStateAction } from "react";
 
 import image1 from "../../../public/images/1.jpg";
 import image2 from "../../../public/images/2.jpg";
