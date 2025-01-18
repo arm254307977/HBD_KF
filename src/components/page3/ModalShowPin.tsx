@@ -118,7 +118,7 @@ const ModalShowPin = ({ isBoxOpen, setIsBoxOpen }: Props) => {
               >
                 {isShowVideo ? (
                   <video poster="/images/กระต่ายHBD.jpeg" controls className="rounded-xl drop-shadow-lg">
-                    <source src="/images/video1.mp4" type="video/mp4" />
+                    <source src="/images/video2.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 ) : (
