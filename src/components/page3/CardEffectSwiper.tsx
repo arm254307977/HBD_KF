@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Image, { StaticImageData } from "next/image";
-import { SetStateAction, useEffect, useState } from "react";
+import { SetStateAction } from "react";
 import { motion } from "framer-motion";
 import ModalShowImage from "../page2/ModalShowImage";
 
