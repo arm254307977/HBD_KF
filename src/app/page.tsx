@@ -21,7 +21,7 @@ export default function Home() {
       ) : selectPage === 2 ? (
         <Page2 setSelectPage={setSelectPage} />
       ) : selectPage === 3 ? (
-        <Page3 />
+        <Page3 setSelectPage={setSelectPage} />
       ) : null}
     </div>
   );

@@ -59,7 +59,7 @@ export default function Page1({ setSelectPage }: Page1Props) {
       <Header
         textHeader1={textHeader1}
         textHeader2={textHeader2}
-        textHeader3={"ขอให้เธอมีความสุขมาก ทั้งในวันนี้และตลอดไป..."}
+        textHeader3={"ขอให้เธอมีความสุขมากๆ ทั้งในวันนี้และตลอดไป..."}
         emoji1={"🎊"}
         emoji2={"✨"}
       />

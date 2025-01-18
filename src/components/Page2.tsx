@@ -22,7 +22,7 @@ export default function Page2({ setSelectPage }: Page2Props) {
 
   const fullTextHeader1 = "โตขึ้นอีกปีแล้ว";
   const fullTextHeader2 = "19/01";
-  const typingSpeed = 100; // ความเร็วในการพิมพ์ (ms)
+  const typingSpeed = 70; // ความเร็วในการพิมพ์ (ms)
   const fullText = fullTextHeader1 + fullTextHeader2; // รวมข้อความทั้งหมด
 
   // ตั้งค่าขนาดหน้าจอ
@@ -62,8 +62,6 @@ export default function Page2({ setSelectPage }: Page2Props) {
       <GiftBox isBoxOpen={isBoxOpen} setIsBoxOpen={setIsBoxOpen} />
 
       <Card1 />
-
-      <Video />
 
       <ButtonBackToPage1 setSelectPage={setSelectPage} setIsBoxOpen={setIsBoxOpen} />
     </>

@@ -38,7 +38,7 @@ function HeaderPage1({ textHeader1, textHeader2, textHeader3, emoji1, emoji2 }: 
         className="text-lg md:text-2xl text-hot-pink/90 mt-4 px-4"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2 }}
+        transition={{ duration: 1, delay: 1.5 }}
       >
         {textHeader3}
       </motion.p>

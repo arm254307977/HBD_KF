@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import CardEffectSwiper from "../CardEffectSwiper";
+import CardEffectSwiper from "./CardEffectSwiper";
 import ModalShowImage from "./ModalShowImage";
 import { useState } from "react";
 
@@ -11,14 +11,14 @@ type Props = {
 };
 
 function GiftBox({ isBoxOpen, setIsBoxOpen }: Props) {
-  const [isDataSelectImgage, setDataSelectImgage] = useState<StaticImageData | null>(null);
+  const [dataSelectImgage, setDataSelectImgage] = useState<StaticImageData | null>(null);
 
   return (
     <motion.section
       className={`w-full flex justify-center items-center ${!isBoxOpen ? "my-[-4rem]" : "my-4"}`}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: 2.5 }}
+      transition={{ duration: 0.5, delay: 2 }}
     >
       {!isBoxOpen ? (
         <div className=" relative">
@@ -40,7 +40,7 @@ function GiftBox({ isBoxOpen, setIsBoxOpen }: Props) {
           <CardEffectSwiper setDataSelectImgage={setDataSelectImgage} />
         </motion.div>
       )}
-      <ModalShowImage isDataSelectImgage={isDataSelectImgage} setDataSelectImgage={setDataSelectImgage} />
+      <ModalShowImage dataSelectImgage={dataSelectImgage} setDataSelectImgage={setDataSelectImgage} />
     </motion.section>
   );
 }

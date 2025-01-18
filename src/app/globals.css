@@ -47,6 +47,10 @@
   animation: animate_drifting_YoRu 1s ease-in-out infinite;
 }
 
+.gift-box2 {
+  animation: jumpSideToSide 3s ease-in-out infinite;
+}
+
 @keyframes animate_drifting {
   0%,
   100% {
@@ -105,10 +109,10 @@
     transform: translate(5px, 0) rotate(5deg);
   }
   80% {
-    transform: translate(0, -10px); /* กระเด้งขึ้น */
+    transform: translate(0, -10px);
   }
   90% {
-    transform: translate(0, 5px); /* ลงเล็กน้อย */
+    transform: translate(0, 5px);
   }
 }
 
@@ -131,5 +135,22 @@
 
   50% {
     transform: rotate(-20deg);
+  }
+}
+
+@keyframes jumpSideToSide {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50% {
+    transform: translateY(-20px); /* กระโดดขึ้น */
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateY(0); /* กลับลง */
   }
 }

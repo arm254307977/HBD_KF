@@ -3,20 +3,18 @@ import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDi
 import Image, { StaticImageData } from "next/image";
 
 type Props = {
-  isDataSelectImgage: StaticImageData | null;
+  dataSelectImgage: StaticImageData | null;
   setDataSelectImgage: React.Dispatch<SetStateAction<StaticImageData | null>>;
 };
 
-const ModalShowImage = ({ isDataSelectImgage, setDataSelectImgage }: Props) => {
+const ModalShowImage = ({ dataSelectImgage, setDataSelectImgage }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    console.log("isDataSelectImgage : ", isDataSelectImgage);
-
-    if (isDataSelectImgage) {
+    if (dataSelectImgage) {
       onOpen();
     }
-  }, [isDataSelectImgage]);
+  }, [dataSelectImgage]);
 
   const handleModalClose = () => {
     setDataSelectImgage(null);
@@ -57,7 +55,7 @@ const ModalShowImage = ({ isDataSelectImgage, setDataSelectImgage }: Props) => {
             <ModalBody>
               <div className="w-full h-full flex justify-center items-center">
                 <Image
-                  src={isDataSelectImgage || "/images/dinoNotFound.jpeg"}
+                  src={dataSelectImgage || "/images/dinoNotFound.jpeg"}
                   alt={`image preview`}
                   className="w-full h-full object-cover rounded-md drop-shadow-lg border border-nude/50"
                   width={300}

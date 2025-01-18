@@ -48,7 +48,6 @@ export default function MusicPlayer() {
 
     if (!audio) return;
 
-    // อัปเดตเวลาปัจจุบันขณะเล่นเพลง
     const updateTime = () => {
       setCurrentTime(audio.currentTime);
     };
