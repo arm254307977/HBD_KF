@@ -10,26 +10,51 @@ import { SetStateAction, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ModalShowImage from "../page2/ModalShowImage";
 
+import image100 from "../../../public/images/100.jpg";
+import image101 from "../../../public/images/101.jpg";
+import image102 from "../../../public/images/102.jpg";
+import image103 from "../../../public/images/103.jpg";
+import image104 from "../../../public/images/104.jpg";
+import image105 from "../../../public/images/105.jpg";
+import image106 from "../../../public/images/106.jpg";
+import image107 from "../../../public/images/107.jpg";
+import image108 from "../../../public/images/108.jpg";
+import image109 from "../../../public/images/109.jpg";
+import image110 from "../../../public/images/110.jpg";
+import image111 from "../../../public/images/111.jpg";
+import image112 from "../../../public/images/112.jpg";
+import image113 from "../../../public/images/113.jpg";
+import image114 from "../../../public/images/114.jpg";
+import image115 from "../../../public/images/115.jpg";
+import image116 from "../../../public/images/116.jpg";
+import image117 from "../../../public/images/117.jpg";
+
 type Props = {
   dataSelectImgage: StaticImageData | null;
   setDataSelectImgage: React.Dispatch<SetStateAction<StaticImageData | null>>;
 };
 
 export default function CardEffectSwiper({ dataSelectImgage, setDataSelectImgage }: Props) {
-  const [images, setImages] = useState<StaticImageData[]>([]);
-
-  useEffect(() => {
-    const loadImages = async () => {
-      const importedImages: StaticImageData[] = [];
-      for (let i = 100; i <= 117; i++) {
-        const image = await import(`../../../public/images/${i}.jpg`);
-        importedImages.push(image.default);
-      }
-      setImages(importedImages);
-    };
-
-    loadImages();
-  }, []);
+  const images = [
+    image100,
+    image101,
+    image102,
+    image103,
+    image104,
+    image105,
+    image106,
+    image107,
+    image108,
+    image109,
+    image110,
+    image111,
+    image112,
+    image113,
+    image114,
+    image115,
+    image116,
+    image117,
+  ];
 
   return (
     <motion.section
